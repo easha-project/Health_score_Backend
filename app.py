@@ -11,6 +11,12 @@ doctor_conditions = {'Diabetes': 2, 'Cancer': 1, 'Obesity': 3, 'Arthritis': 0}
 medications = {'Ibuprofen': 0, 'Paracetamol': 1, 'Lipitor': 2, 'Aspirin': 3, 'Penicillin': 4}
 test_results = {'Normal': 0, 'Inconclusive': 1, 'Abnormal': 2}
 
+# ✅ Health check route (for browser or Render)
+@app.route("/", methods=["GET"])
+def home():
+    return "✅ Health Score Predictor API is running!"
+
+# ✅ Prediction route (for frontend)
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json()
